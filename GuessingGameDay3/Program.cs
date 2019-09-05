@@ -6,25 +6,31 @@ namespace GuessingGameDay3
     {
         static void Main(string[] args)
         {
+            Random random = new Random();
+
             Console.WriteLine("Please guess a number between 1 and 10");
 
-            string userGuess = Console.ReadLine();
-            byte guess = Convert.ToByte(userGuess);
+            int userGuess = Convert.ToInt32(Console.ReadLine());
+            int secretNumber = random.Next(1, 10);            
 
-            if (guess == 7)
+            if (userGuess == secretNumber)
             {
                 Console.WriteLine("You Win!");
                 Environment.Exit(0);
             }
 
-            if (guess <= 5)
+            if (userGuess < secretNumber)
             {
-                
+                Console.WriteLine("The secret number is greater than " + userGuess);
             }
 
-                  
+            if (userGuess > secretNumber)
+            {
+                Console.WriteLine("The secret number is less than " + userGuess);
+            }
 
-            if (guess == 0)
+
+            if (userGuess == 0)
             {
                 Console.WriteLine("Number must be between 1 and 10");
             }
@@ -36,16 +42,25 @@ namespace GuessingGameDay3
 
             Console.WriteLine("Please guess a number between 1 and 10");
 
-            string userGuess2 = Console.ReadLine();
-            byte guess2 = Convert.ToByte(userGuess2);
+            int userGuess2 = Convert.ToInt32(Console.ReadLine());
 
-            if (guess2 == 7)
+            if (userGuess2 == secretNumber)
             {
                 Console.WriteLine("You Win!");
                 Environment.Exit(0);
             }
 
-            if (guess2 < 0)
+            if (userGuess2 < secretNumber)
+            {
+                Console.WriteLine("The secret number is greater than " + userGuess2);
+            }
+
+            if (userGuess2 > secretNumber)
+            {
+                Console.WriteLine("The secret number is less than " + userGuess2);
+            }
+
+            if (userGuess2 < 0)
             {
                 Environment.Exit(0);
             }
@@ -57,18 +72,27 @@ namespace GuessingGameDay3
 
 
             Console.WriteLine("You have one more guess");
-            
 
-               string userGuess3 = Console.ReadLine();
-               byte guess3 = Convert.ToByte(userGuess3);
-           
 
-            if (guess3 == 7)
+            int userGuess3 = Convert.ToInt32(Console.ReadLine());
+
+
+            if (userGuess3 == secretNumber)
             {
                 Console.WriteLine("You Win!");
             }
 
-            if (guess3 < 0)
+            if (userGuess3 < secretNumber)
+            {
+                Console.WriteLine("The secret number is greater than " + userGuess3 );
+            }
+
+            if (userGuess3 > secretNumber)
+            {
+                Console.WriteLine("The secret number is less than " + userGuess3);
+            }
+
+            if (userGuess3 < 0)
             {
                 Environment.Exit(0);
             }
